@@ -1,6 +1,12 @@
 var express = require('express');
 var router = express.Router();
 var webshot = require('webshot');
+var util = require('util');
+
+router.get('/', function(req, res){
+	var url = 'http://[your-ip-address]';
+	res.end(util.format('Welcome to web capture web site, using %s/webshot?url=[URL] for retrieve captured image.', url));
+});
 
 router.get('/test', function(req, res, next) {
 	res.end('ok');
